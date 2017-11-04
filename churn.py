@@ -1,15 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  4 14:15:58 2017
-
-@author: GauravH
-"""
+@author: Gaurav
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler
 
 data = pd.read_csv("c:\\Users\\gauravh\\vigu\\train.csv")
 #data.columns.get_loc("HNW_CATEGORY")
@@ -54,3 +50,6 @@ for col in data.columns.values:
 
 onehotencoder = OneHotEncoder(categorical_features=lis)
 data = onehotencoder.fit_transform(data).toarray()
+
+sc_X = StandardScaler()
+data = sc_X.fit_transform(data)
