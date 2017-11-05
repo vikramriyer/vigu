@@ -125,3 +125,6 @@ test_pred = clf.predict(test_X)
 
 from sklearn.metrics import accuracy_score
 accuracy_score(test_y, test_pred)
+
+#accuracy_score(test_y, test_pred)
+#out[34]: 0.81605050505050503
