@@ -1,7 +1,7 @@
+
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
-
 This is a temporary script file.
 """
 
@@ -80,6 +80,10 @@ for col in train_x.columns.values:
     if train_x[col].dtypes == 'object':
         train_x[col].fillna(train_x[col].value_counts().index[0], inplace=True)
         
+for col in test_x.columns.values:
+    if test_x[col].dtypes == 'object':
+        test_x[col].fillna(test_x[col].value_counts().index[0], inplace=True)
+        
         
 null_columns=train_x.columns[train_x.isnull().any()]
 train_x[null_columns].isnull().sum()
@@ -121,11 +125,3 @@ test_pred = clf.predict(test_X)
 
 from sklearn.metrics import accuracy_score
 accuracy_score(test_y, test_pred)
-
-#result come out to be accuracy_score(test_y, test_pred)
-#Out[34]: 0.81605050505050503
-
-
-
-
-
