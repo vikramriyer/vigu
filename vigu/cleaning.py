@@ -70,3 +70,11 @@ def rf_feat_importance(m, df):
     return pd.DataFrame({'cols':df.columns, 'imp':m.feature_importances_}
                        ).sort_values('imp', ascending=False)
 
+def randomly_select_non_repeating_indexes(range_start, range_end, bathc_size):
+    '''
+	There are use cases where we need all the samples from a dataset but they
+        should not be repeated in batches.
+        For ex: we have 4000 points and want batches of 50 i.e. 80 mini batches
+        but the indexes/data points in any two batches should not collide.
+    '''
+    pass
